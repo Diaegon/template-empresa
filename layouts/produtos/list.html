@@ -1,0 +1,164 @@
+{{ define "main" }}
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="container">
+    <h1>Nossos Produtos</h1>
+    <p>Linha completa de produtos industriais e comerciais com qualidade e procedência garantidas.</p>
+    <div class="breadcrumb">
+      <a href="/">Home</a>
+      <span>›</span>
+      <span>Produtos</span>
+    </div>
+  </div>
+</section>
+
+<!-- Products -->
+<section class="section">
+  <div class="container">
+
+    <!-- Filters -->
+    <div class="product-filters">
+      <button class="filter-btn active">Todos</button>
+      <button class="filter-btn">Industrial</button>
+      <button class="filter-btn">Ferramentaria</button>
+      <button class="filter-btn">Construção</button>
+      <button class="filter-btn">Segurança</button>
+      <button class="filter-btn">Química</button>
+      <button class="filter-btn">Elétrica</button>
+    </div>
+
+    <!-- Grid -->
+    <div class="cards-grid" style="grid-template-columns: repeat(3, 1fr);">
+
+      <div class="product-card">
+        <img class="product-card-img" src="https://picsum.photos/seed/prod-eq-ind/600/400" alt="Compressor Industrial" loading="lazy">
+        <div class="product-card-body">
+          <span class="product-card-tag">Industrial</span>
+          <h3 class="product-card-name">Compressor de Ar Industrial</h3>
+          <p class="product-card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam.</p>
+          <div class="product-card-footer">
+            <span class="product-card-detail">Cód: PRD-001</span>
+            <a href="/contato/" class="product-card-cta">Solicitar orçamento →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img class="product-card-img" src="https://picsum.photos/seed/prod-fr-pr/600/400" alt="Parafusadeira Profissional" loading="lazy">
+        <div class="product-card-body">
+          <span class="product-card-tag">Ferramentaria</span>
+          <h3 class="product-card-name">Parafusadeira Profissional</h3>
+          <p class="product-card-desc">Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
+          <div class="product-card-footer">
+            <span class="product-card-detail">Cód: PRD-002</span>
+            <a href="/contato/" class="product-card-cta">Solicitar orçamento →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img class="product-card-img" src="https://picsum.photos/seed/prod-cim/600/400" alt="Cimento Portland" loading="lazy">
+        <div class="product-card-body">
+          <span class="product-card-tag">Construção</span>
+          <h3 class="product-card-name">Cimento Portland CP-III</h3>
+          <p class="product-card-desc">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis.</p>
+          <div class="product-card-footer">
+            <span class="product-card-detail">Cód: PRD-003</span>
+            <a href="/contato/" class="product-card-cta">Solicitar orçamento →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img class="product-card-img" src="https://picsum.photos/seed/prod-cap/600/400" alt="Capacete de Segurança" loading="lazy">
+        <div class="product-card-body">
+          <span class="product-card-tag">Segurança</span>
+          <h3 class="product-card-name">Capacete de Segurança Classe B</h3>
+          <p class="product-card-desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione.</p>
+          <div class="product-card-footer">
+            <span class="product-card-detail">Cód: PRD-004</span>
+            <a href="/contato/" class="product-card-cta">Solicitar orçamento →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img class="product-card-img" src="https://picsum.photos/seed/prod-oleos/600/400" alt="Óleo Lubrificante" loading="lazy">
+        <div class="product-card-body">
+          <span class="product-card-tag">Química</span>
+          <h3 class="product-card-name">Óleo Lubrificante Industrial</h3>
+          <p class="product-card-desc">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.</p>
+          <div class="product-card-footer">
+            <span class="product-card-detail">Cód: PRD-005</span>
+            <a href="/contato/" class="product-card-cta">Solicitar orçamento →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img class="product-card-img" src="https://picsum.photos/seed/prod-disjun/600/400" alt="Disjuntor Trifásico" loading="lazy">
+        <div class="product-card-body">
+          <span class="product-card-tag">Elétrica</span>
+          <h3 class="product-card-name">Disjuntor Trifásico 100A</h3>
+          <p class="product-card-desc">Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus omnis.</p>
+          <div class="product-card-footer">
+            <span class="product-card-detail">Cód: PRD-006</span>
+            <a href="/contato/" class="product-card-cta">Solicitar orçamento →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img class="product-card-img" src="https://picsum.photos/seed/prod-movel/600/400" alt="Esmerilhadeira Angular" loading="lazy">
+        <div class="product-card-body">
+          <span class="product-card-tag">Ferramentaria</span>
+          <h3 class="product-card-name">Esmerilhadeira Angular 7"</h3>
+          <p class="product-card-desc">Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint molestiae.</p>
+          <div class="product-card-footer">
+            <span class="product-card-detail">Cód: PRD-007</span>
+            <a href="/contato/" class="product-card-cta">Solicitar orçamento →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img class="product-card-img" src="https://picsum.photos/seed/prod-epi2/600/400" alt="Luvas de Segurança" loading="lazy">
+        <div class="product-card-body">
+          <span class="product-card-tag">Segurança</span>
+          <h3 class="product-card-name">Luvas de Segurança Nitrilica</h3>
+          <p class="product-card-desc">Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus.</p>
+          <div class="product-card-footer">
+            <span class="product-card-detail">Cód: PRD-008</span>
+            <a href="/contato/" class="product-card-cta">Solicitar orçamento →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img class="product-card-img" src="https://picsum.photos/seed/prod-aco/600/400" alt="Perfil de Aço" loading="lazy">
+        <div class="product-card-body">
+          <span class="product-card-tag">Construção</span>
+          <h3 class="product-card-name">Perfil de Aço Estrutural</h3>
+          <p class="product-card-desc">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur vel illum qui dolorem eum fugiat.</p>
+          <div class="product-card-footer">
+            <span class="product-card-detail">Cód: PRD-009</span>
+            <a href="/contato/" class="product-card-cta">Solicitar orçamento →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="container">
+    <h2>Não encontrou o que procurava?</h2>
+    <p>Nossa equipe pode ajudar você a encontrar o produto ideal para sua necessidade.</p>
+    <a href="/contato/" class="btn btn-outline-white btn-lg">Fale com um especialista</a>
+  </div>
+</section>
+
+{{ end }}

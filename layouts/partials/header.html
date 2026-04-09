@@ -1,0 +1,53 @@
+<header class="site-header">
+  <!-- Top bar -->
+  <div class="header-top">
+    <div class="header-top-inner">
+      <span class="ht-item">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .54h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.37a16 16 0 006.29 6.29l1.19-1.19a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <a href="tel:+551199999999">{{ .Site.Params.phone }}</a>
+      </span>
+      <span class="ht-item">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a>
+      </span>
+      <span class="ht-item">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        São Paulo, SP
+      </span>
+    </div>
+  </div>
+
+  <!-- Main nav -->
+  <div class="nav-wrapper">
+    <div class="container">
+      <nav class="nav-inner">
+        <!-- Logo -->
+        <a href="/" class="nav-logo">
+          <div class="nav-logo-mark">PS</div>
+          <div class="nav-logo-text">
+            <div class="nav-logo-name">Proservicos</div>
+            <div class="nav-logo-tagline">Soluções para seu negócio</div>
+          </div>
+        </a>
+
+        <!-- Mobile toggle -->
+        <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+
+        <!-- Links -->
+        <ul class="nav-menu">
+          {{ range .Site.Menus.main }}
+          <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+          {{ end }}
+        </ul>
+
+        <!-- CTA -->
+        <div class="nav-actions">
+          <a href="/contato/" class="btn btn-outline-primary">Solicitar Orçamento</a>
+          <a href="https://wa.me/{{ .Site.Params.whatsapp }}" class="btn btn-primary" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
