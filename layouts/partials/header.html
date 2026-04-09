@@ -12,7 +12,7 @@
       </span>
       <span class="ht-item">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        São Paulo, SP
+        {{ .Site.Params.city }}
       </span>
     </div>
   </div>
@@ -23,10 +23,10 @@
       <nav class="nav-inner">
         <!-- Logo -->
         <a href="/" class="nav-logo">
-          <div class="nav-logo-mark">PS</div>
+          <div class="nav-logo-mark">{{ .Site.Params.logo_mark }}</div>
           <div class="nav-logo-text">
-            <div class="nav-logo-name">Proservicos</div>
-            <div class="nav-logo-tagline">Soluções para seu negócio</div>
+            <div class="nav-logo-name">{{ .Site.Title }}</div>
+            <div class="nav-logo-tagline">{{ .Site.Params.logo_tagline }}</div>
           </div>
         </a>
 

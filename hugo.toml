@@ -8,8 +8,17 @@ title = 'Proservicos'
   phone = '(85) 9 9999-9999'
   email = 'contato@proservicos.com.br'
   address = 'Av. Lorem Ipsum, 1234 — Centro, São Paulo - SP'
+  city = 'São Paulo, SP'
   whatsapp = '5511999999999'
   cnpj = '00.000.000/0001-00'
+  logo_mark = 'PS'
+  logo_tagline = 'Soluções para seu negócio'
+  footer_desc = 'Há mais de 15 anos oferecemos soluções completas em produtos e serviços para empresas de todos os segmentos. Confiança, qualidade e compromisso com o seu sucesso.'
+
+[params.social]
+  facebook = '#'
+  instagram = '#'
+  linkedin = '#'
 
 [[menus.main]]
   name = 'Home'

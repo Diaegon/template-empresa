@@ -1,10 +1,11 @@
 {{ define "main" }}
+{{ $d := .Site.Data.servicos }}
 
 <!-- Page Hero -->
 <section class="page-hero">
   <div class="container">
-    <h1>Nossos Serviços</h1>
-    <p>Soluções técnicas especializadas para maximizar a eficiência e produtividade da sua empresa.</p>
+    <h1>{{ $d.hero.title }}</h1>
+    <p>{{ $d.hero.subtitle }}</p>
     <div class="breadcrumb">
       <a href="/">Home</a>
       <span>›</span>
@@ -16,131 +17,35 @@
 <!-- Services list -->
 <section class="section">
   <div class="container">
-
-    <!-- Consultoria -->
-    <div class="service-row">
-      <img class="service-row-img" src="https://picsum.photos/seed/serv-consult/800/500" alt="Consultoria Técnica" loading="lazy">
+    {{ range $d.items }}
+    <div class="service-row{{ if .reverse }} reverse{{ end }}">
+      <img class="service-row-img" src="{{ .image }}" alt="{{ .image_alt }}" loading="lazy">
       <div>
         <div class="service-row-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>
+          {{ partial "service-icon" .icon }}
         </div>
-        <span class="service-row-tag">Consultoria</span>
-        <h2 class="service-row-title">Consultoria Técnica Especializada</h2>
-        <p class="service-row-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <p class="service-row-desc">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <span class="service-row-tag">{{ .tag }}</span>
+        <h2 class="service-row-title">{{ .title }}</h2>
+        {{ range .paragraphs }}<p class="service-row-desc">{{ . }}</p>{{ end }}
         <ul class="service-features">
-          <li class="service-feature">Análise diagnóstica completa da operação</li>
-          <li class="service-feature">Relatório técnico detalhado com recomendações</li>
-          <li class="service-feature">Acompanhamento de implementação das melhorias</li>
-          <li class="service-feature">Suporte contínuo pós-consultoria</li>
+          {{ range .features }}<li class="service-feature">{{ . }}</li>{{ end }}
         </ul>
         <div style="margin-top:28px;">
-          <a href="/contato/" class="btn btn-primary">Solicitar Consultoria</a>
+          <a href="{{ .button_url }}" class="btn btn-primary">{{ .button_text }}</a>
         </div>
       </div>
     </div>
-
-    <!-- Manutenção -->
-    <div class="service-row reverse">
-      <img class="service-row-img" src="https://picsum.photos/seed/serv-manut/800/500" alt="Manutenção Preventiva" loading="lazy">
-      <div>
-        <div class="service-row-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
-        </div>
-        <span class="service-row-tag">Manutenção</span>
-        <h2 class="service-row-title">Manutenção Preventiva e Corretiva</h2>
-        <p class="service-row-desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-        <p class="service-row-desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-        <ul class="service-features">
-          <li class="service-feature">Plano de manutenção personalizado</li>
-          <li class="service-feature">Equipe técnica certificada e experiente</li>
-          <li class="service-feature">Relatórios de manutenção e rastreabilidade</li>
-          <li class="service-feature">Atendimento de emergência 24 horas</li>
-        </ul>
-        <div style="margin-top:28px;">
-          <a href="/contato/" class="btn btn-primary">Contratar Manutenção</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Instalação -->
-    <div class="service-row">
-      <img class="service-row-img" src="https://picsum.photos/seed/serv-instal/800/500" alt="Instalação e Montagem" loading="lazy">
-      <div>
-        <div class="service-row-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        </div>
-        <span class="service-row-tag">Instalação</span>
-        <h2 class="service-row-title">Instalação e Montagem de Equipamentos</h2>
-        <p class="service-row-desc">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
-        <p class="service-row-desc">Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio nam libero tempore.</p>
-        <ul class="service-features">
-          <li class="service-feature">Projeto de instalação com ART/RRT</li>
-          <li class="service-feature">Montagem conforme normas técnicas vigentes</li>
-          <li class="service-feature">Comissionamento e testes de aceitação</li>
-          <li class="service-feature">Treinamento operacional da equipe cliente</li>
-        </ul>
-        <div style="margin-top:28px;">
-          <a href="/contato/" class="btn btn-primary">Solicitar Instalação</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Treinamento -->
-    <div class="service-row reverse">
-      <img class="service-row-img" src="https://picsum.photos/seed/serv-treino/800/500" alt="Treinamento e Capacitação" loading="lazy">
-      <div>
-        <div class="service-row-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
-        </div>
-        <span class="service-row-tag">Treinamento</span>
-        <h2 class="service-row-title">Treinamento e Capacitação Profissional</h2>
-        <p class="service-row-desc">Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae itaque earum rerum hic tenetur sapiente delectus.</p>
-        <p class="service-row-desc">Ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat quis autem vel eum iure reprehenderit.</p>
-        <ul class="service-features">
-          <li class="service-feature">Cursos presenciais e online certificados</li>
-          <li class="service-feature">Conteúdo personalizado para cada setor</li>
-          <li class="service-feature">Certificados reconhecidos pelo mercado</li>
-          <li class="service-feature">Material didático incluso</li>
-        </ul>
-        <div style="margin-top:28px;">
-          <a href="/contato/" class="btn btn-primary">Solicitar Treinamento</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Locação -->
-    <div class="service-row">
-      <img class="service-row-img" src="https://picsum.photos/seed/serv-locac/800/500" alt="Locação de Equipamentos" loading="lazy">
-      <div>
-        <div class="service-row-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-        </div>
-        <span class="service-row-tag">Locação</span>
-        <h2 class="service-row-title">Locação de Equipamentos</h2>
-        <p class="service-row-desc">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur. Lorem ipsum dolor sit amet consectetur.</p>
-        <p class="service-row-desc">Adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation.</p>
-        <ul class="service-features">
-          <li class="service-feature">Equipamentos revisados e certificados</li>
-          <li class="service-feature">Contratos flexíveis: diária, semanal ou mensal</li>
-          <li class="service-feature">Entrega e retirada no local</li>
-          <li class="service-feature">Suporte técnico durante todo o período</li>
-        </ul>
-        <div style="margin-top:28px;">
-          <a href="/contato/" class="btn btn-primary">Solicitar Locação</a>
-        </div>
-      </div>
-    </div>
-
+    {{ end }}
   </div>
 </section>
 
 <!-- CTA -->
+{{ $cta := $d.cta_banner }}
 <section class="cta-banner">
   <div class="container">
-    <h2>Pronto para contratar um serviço?</h2>
-    <p>Fale com nossa equipe e receba uma proposta personalizada para sua empresa.</p>
-    <a href="/contato/" class="btn btn-outline-white btn-lg">Solicitar Proposta</a>
+    <h2>{{ $cta.title }}</h2>
+    <p>{{ $cta.text }}</p>
+    <a href="{{ $cta.button_url }}" class="btn btn-outline-white btn-lg">{{ $cta.button_text }}</a>
   </div>
 </section>
 

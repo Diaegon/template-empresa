@@ -1,0 +1,91 @@
+hero:
+  title: "Nossos Serviços"
+  subtitle: "Soluções técnicas especializadas para maximizar a eficiência e produtividade da sua empresa."
+
+items:
+  - icon: "consultoria"
+    tag: "Consultoria"
+    title: "Consultoria Técnica Especializada"
+    paragraphs:
+      - "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      - "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    features:
+      - "Análise diagnóstica completa da operação"
+      - "Relatório técnico detalhado com recomendações"
+      - "Acompanhamento de implementação das melhorias"
+      - "Suporte contínuo pós-consultoria"
+    button_text: "Solicitar Consultoria"
+    button_url: "/contato/"
+    reverse: false
+    image: "https://picsum.photos/seed/serv-consult/800/500"
+    image_alt: "Consultoria Técnica"
+  - icon: "manutencao"
+    tag: "Manutenção"
+    title: "Manutenção Preventiva e Corretiva"
+    paragraphs:
+      - "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
+      - "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
+    features:
+      - "Plano de manutenção personalizado"
+      - "Equipe técnica certificada e experiente"
+      - "Relatórios de manutenção e rastreabilidade"
+      - "Atendimento de emergência 24 horas"
+    button_text: "Contratar Manutenção"
+    button_url: "/contato/"
+    reverse: true
+    image: "https://picsum.photos/seed/serv-manut/800/500"
+    image_alt: "Manutenção Preventiva"
+  - icon: "instalacao"
+    tag: "Instalação"
+    title: "Instalação e Montagem de Equipamentos"
+    paragraphs:
+      - "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident."
+      - "Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio nam libero tempore."
+    features:
+      - "Projeto de instalação com ART/RRT"
+      - "Montagem conforme normas técnicas vigentes"
+      - "Comissionamento e testes de aceitação"
+      - "Treinamento operacional da equipe cliente"
+    button_text: "Solicitar Instalação"
+    button_url: "/contato/"
+    reverse: false
+    image: "https://picsum.photos/seed/serv-instal/800/500"
+    image_alt: "Instalação e Montagem"
+  - icon: "treinamento"
+    tag: "Treinamento"
+    title: "Treinamento e Capacitação Profissional"
+    paragraphs:
+      - "Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae itaque earum rerum hic tenetur sapiente delectus."
+      - "Ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat quis autem vel eum iure reprehenderit."
+    features:
+      - "Cursos presenciais e online certificados"
+      - "Conteúdo personalizado para cada setor"
+      - "Certificados reconhecidos pelo mercado"
+      - "Material didático incluso"
+    button_text: "Solicitar Treinamento"
+    button_url: "/contato/"
+    reverse: true
+    image: "https://picsum.photos/seed/serv-treino/800/500"
+    image_alt: "Treinamento e Capacitação"
+  - icon: "locacao"
+    tag: "Locação"
+    title: "Locação de Equipamentos"
+    paragraphs:
+      - "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur. Lorem ipsum dolor sit amet consectetur."
+      - "Adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation."
+    features:
+      - "Equipamentos revisados e certificados"
+      - "Contratos flexíveis: diária, semanal ou mensal"
+      - "Entrega e retirada no local"
+      - "Suporte técnico durante todo o período"
+    button_text: "Solicitar Locação"
+    button_url: "/contato/"
+    reverse: false
+    image: "https://picsum.photos/seed/serv-locac/800/500"
+    image_alt: "Locação de Equipamentos"
+
+cta_banner:
+  title: "Pronto para contratar um serviço?"
+  text: "Fale com nossa equipe e receba uma proposta personalizada para sua empresa."
+  button_text: "Solicitar Proposta"
+  button_url: "/contato/"

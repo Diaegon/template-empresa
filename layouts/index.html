@@ -1,40 +1,29 @@
 {{ define "main" }}
+{{ $d := .Site.Data.home }}
 
 <!-- ============================================================
      HERO
      ============================================================ -->
 <section class="hero">
-  <div class="hero-bg"></div>
+  <div class="hero-bg" style="background-image: url('{{ $d.hero.image }}')"></div>
   <div class="container">
     <div class="hero-content">
-      <span class="hero-badge">Soluções Industriais & Comerciais</span>
+      <span class="hero-badge">{{ $d.hero.badge }}</span>
       <h1 class="hero-title">
-        Soluções completas<br>para o seu <span>negócio crescer</span>
+        {{ $d.hero.title_line1 }}<br>{{ $d.hero.title_line2 }} <span>{{ $d.hero.title_highlight }}</span>
       </h1>
-      <p class="hero-subtitle">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fornecemos produtos de alta qualidade e serviços especializados para empresas de todos os segmentos, com foco em eficiência e confiança.
-      </p>
+      <p class="hero-subtitle">{{ $d.hero.subtitle }}</p>
       <div class="hero-actions">
-        <a href="/produtos/" class="btn btn-primary btn-lg">Conheça Nossos Produtos</a>
-        <a href="/contato/" class="btn btn-outline-white btn-lg">Solicitar Orçamento</a>
+        <a href="{{ $d.hero.button_primary.url }}" class="btn btn-primary btn-lg">{{ $d.hero.button_primary.text }}</a>
+        <a href="{{ $d.hero.button_secondary.url }}" class="btn btn-outline-white btn-lg">{{ $d.hero.button_secondary.text }}</a>
       </div>
       <div class="hero-stats">
+        {{ range $d.hero.stats }}
         <div>
-          <div class="hero-stat-number">15+</div>
-          <div class="hero-stat-label">Anos de<br>experiência</div>
+          <div class="hero-stat-number">{{ .number }}</div>
+          <div class="hero-stat-label">{{ .label | safeHTML }}</div>
         </div>
-        <div>
-          <div class="hero-stat-number">1.200+</div>
-          <div class="hero-stat-label">Clientes<br>atendidos</div>
-        </div>
-        <div>
-          <div class="hero-stat-number">98%</div>
-          <div class="hero-stat-label">Satisfação<br>dos clientes</div>
-        </div>
-        <div>
-          <div class="hero-stat-number">6</div>
-          <div class="hero-stat-label">Segmentos<br>atendidos</div>
-        </div>
+        {{ end }}
       </div>
     </div>
   </div>
@@ -43,92 +32,33 @@
 <!-- ============================================================
      PRODUTOS EM DESTAQUE
      ============================================================ -->
+{{ $ps := $d.products_section }}
 <section class="section">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Catálogo</span>
-      <h2 class="section-title">Nossos Produtos</h2>
-      <p class="section-subtitle">Linha completa de produtos para atender todas as demandas da sua operação com qualidade e procedência garantida.</p>
+      <span class="section-label">{{ $ps.label }}</span>
+      <h2 class="section-title">{{ $ps.title }}</h2>
+      <p class="section-subtitle">{{ $ps.subtitle }}</p>
     </div>
 
     <div class="cards-grid">
-
+      {{ range $ps.items }}
       <div class="card">
-        <img class="card-img" src="https://picsum.photos/seed/equipind/600/400" alt="Equipamentos Industriais" loading="lazy">
+        <img class="card-img" src="{{ .image }}" alt="{{ .image_alt }}" loading="lazy">
         <div class="card-body">
-          <span class="card-tag">Industrial</span>
-          <h3 class="card-title">Equipamentos Industriais</h3>
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <a href="/produtos/" class="card-link">Ver produtos
+          <span class="card-tag">{{ .tag }}</span>
+          <h3 class="card-title">{{ .title }}</h3>
+          <p class="card-text">{{ .text }}</p>
+          <a href="{{ .link_url }}" class="card-link">Ver produtos
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
       </div>
-
-      <div class="card">
-        <img class="card-img" src="https://picsum.photos/seed/ferrpro/600/400" alt="Ferramentas Profissionais" loading="lazy">
-        <div class="card-body">
-          <span class="card-tag">Ferramentaria</span>
-          <h3 class="card-title">Ferramentas Profissionais</h3>
-          <p class="card-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute.</p>
-          <a href="/produtos/" class="card-link">Ver produtos
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="card">
-        <img class="card-img" src="https://picsum.photos/seed/matcons/600/400" alt="Materiais de Construção" loading="lazy">
-        <div class="card-body">
-          <span class="card-tag">Construção</span>
-          <h3 class="card-title">Materiais de Construção</h3>
-          <p class="card-text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat.</p>
-          <a href="/produtos/" class="card-link">Ver produtos
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="card">
-        <img class="card-img" src="https://picsum.photos/seed/episeg/600/400" alt="EPIs e Segurança" loading="lazy">
-        <div class="card-body">
-          <span class="card-tag">Segurança</span>
-          <h3 class="card-title">EPIs e Segurança do Trabalho</h3>
-          <p class="card-text">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum lorem ipsum.</p>
-          <a href="/produtos/" class="card-link">Ver produtos
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="card">
-        <img class="card-img" src="https://picsum.photos/seed/quimlab/600/400" alt="Produtos Químicos" loading="lazy">
-        <div class="card-body">
-          <span class="card-tag">Química</span>
-          <h3 class="card-title">Produtos Químicos e Lubrificantes</h3>
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-          <a href="/produtos/" class="card-link">Ver produtos
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="card">
-        <img class="card-img" src="https://picsum.photos/seed/equipelec/600/400" alt="Equipamentos Elétricos" loading="lazy">
-        <div class="card-body">
-          <span class="card-tag">Elétrica</span>
-          <h3 class="card-title">Equipamentos Elétricos</h3>
-          <p class="card-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat aute irure.</p>
-          <a href="/produtos/" class="card-link">Ver produtos
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
-      </div>
-
+      {{ end }}
     </div>
 
     <div style="text-align:center;margin-top:40px;">
-      <a href="/produtos/" class="btn btn-outline-primary">Ver Todos os Produtos</a>
+      <a href="{{ $ps.button_url }}" class="btn btn-outline-primary">{{ $ps.button_text }}</a>
     </div>
   </div>
 </section>
@@ -136,52 +66,29 @@
 <!-- ============================================================
      SERVIÇOS
      ============================================================ -->
+{{ $ss := $d.services_section }}
 <section class="section section-alt">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">O que fazemos</span>
-      <h2 class="section-title">Nossos Serviços</h2>
-      <p class="section-subtitle">Oferecemos uma gama de serviços especializados para maximizar a produtividade e eficiência da sua empresa.</p>
+      <span class="section-label">{{ $ss.label }}</span>
+      <h2 class="section-title">{{ $ss.title }}</h2>
+      <p class="section-subtitle">{{ $ss.subtitle }}</p>
     </div>
 
     <div class="cards-grid cards-grid-4">
-
+      {{ range $ss.items }}
       <div class="service-card">
         <div class="sc-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/><path d="M15.54 8.46a5 5 0 010 7.07M8.46 8.46a5 5 0 000 7.07"/></svg>
+          {{ partial "service-icon" .icon }}
         </div>
-        <h3 class="sc-title">Consultoria Técnica</h3>
-        <p class="sc-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+        <h3 class="sc-title">{{ .title }}</h3>
+        <p class="sc-text">{{ .text }}</p>
       </div>
-
-      <div class="service-card">
-        <div class="sc-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
-        </div>
-        <h3 class="sc-title">Manutenção Preventiva</h3>
-        <p class="sc-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="sc-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        </div>
-        <h3 class="sc-title">Instalação e Montagem</h3>
-        <p class="sc-text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur.</p>
-      </div>
-
-      <div class="service-card">
-        <div class="sc-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
-        </div>
-        <h3 class="sc-title">Treinamento e Capacitação</h3>
-        <p class="sc-text">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </div>
-
+      {{ end }}
     </div>
 
     <div style="text-align:center;margin-top:40px;">
-      <a href="/servicos/" class="btn btn-outline-primary">Ver Todos os Serviços</a>
+      <a href="{{ $ss.button_url }}" class="btn btn-outline-primary">{{ $ss.button_text }}</a>
     </div>
   </div>
 </section>
@@ -189,52 +96,23 @@
 <!-- ============================================================
      SEGMENTOS ATENDIDOS
      ============================================================ -->
+{{ $sec := $d.sectors_section }}
 <section class="section">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Mercados</span>
-      <h2 class="section-title">Segmentos Atendidos</h2>
-      <p class="section-subtitle">Atuamos em diversos setores da economia, entregando soluções sob medida para cada tipo de negócio.</p>
+      <span class="section-label">{{ $sec.label }}</span>
+      <h2 class="section-title">{{ $sec.title }}</h2>
+      <p class="section-subtitle">{{ $sec.subtitle }}</p>
     </div>
 
     <div class="cards-grid">
-
+      {{ range $sec.items }}
       <div class="sector-card">
-        <div class="sector-icon" style="font-size:1.8rem">🏗️</div>
-        <div class="sector-name">Construção Civil</div>
-        <p class="sector-desc">Materiais, ferramentas e EPIs para obras de todos os portes.</p>
+        <div class="sector-icon" style="font-size:1.8rem">{{ .icon }}</div>
+        <div class="sector-name">{{ .name }}</div>
+        <p class="sector-desc">{{ .desc }}</p>
       </div>
-
-      <div class="sector-card">
-        <div class="sector-icon" style="font-size:1.8rem">🏭</div>
-        <div class="sector-name">Indústria</div>
-        <p class="sector-desc">Equipamentos e insumos para linhas de produção industrial.</p>
-      </div>
-
-      <div class="sector-card">
-        <div class="sector-icon" style="font-size:1.8rem">🏪</div>
-        <div class="sector-name">Comércio</div>
-        <p class="sector-desc">Soluções para operações comerciais com agilidade e custo-benefício.</p>
-      </div>
-
-      <div class="sector-card">
-        <div class="sector-icon" style="font-size:1.8rem">🏥</div>
-        <div class="sector-name">Saúde</div>
-        <p class="sector-desc">Produtos certificados para hospitais, clínicas e laboratórios.</p>
-      </div>
-
-      <div class="sector-card">
-        <div class="sector-icon" style="font-size:1.8rem">🎓</div>
-        <div class="sector-name">Educação</div>
-        <p class="sector-desc">Equipamentos e materiais para instituições de ensino técnico.</p>
-      </div>
-
-      <div class="sector-card">
-        <div class="sector-icon" style="font-size:1.8rem">🌾</div>
-        <div class="sector-name">Agronegócio</div>
-        <p class="sector-desc">Insumos e maquinários para o campo com suporte especializado.</p>
-      </div>
-
+      {{ end }}
     </div>
   </div>
 </section>
@@ -242,40 +120,23 @@
 <!-- ============================================================
      DIFERENCIAIS
      ============================================================ -->
+{{ $df := $d.differentials_section }}
 <section class="section section-dark">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Por que a Proservicos?</span>
-      <h2 class="section-title">Nossos Diferenciais</h2>
-      <p class="section-subtitle">Entendemos que cada cliente é único. Por isso, oferecemos vantagens que fazem a diferença no dia a dia da sua empresa.</p>
+      <span class="section-label">{{ $df.label }}</span>
+      <h2 class="section-title">{{ $df.title }}</h2>
+      <p class="section-subtitle">{{ $df.subtitle }}</p>
     </div>
 
     <div class="cards-grid cards-grid-4">
-
+      {{ range $df.items }}
       <div class="dif-card">
-        <div class="dif-number">01</div>
-        <h3 class="dif-title">Qualidade Garantida</h3>
-        <p class="dif-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Todos os nossos produtos passam por rigoroso controle de qualidade antes da entrega.</p>
+        <div class="dif-number">{{ .number }}</div>
+        <h3 class="dif-title">{{ .title }}</h3>
+        <p class="dif-text">{{ .text }}</p>
       </div>
-
-      <div class="dif-card">
-        <div class="dif-number">02</div>
-        <h3 class="dif-title">Entrega Rápida</h3>
-        <p class="dif-text">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Logística eficiente para o produto chegar no prazo certo.</p>
-      </div>
-
-      <div class="dif-card">
-        <div class="dif-number">03</div>
-        <h3 class="dif-title">Suporte Especializado</h3>
-        <p class="dif-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Equipe técnica disponível para apoiar sua operação.</p>
-      </div>
-
-      <div class="dif-card">
-        <div class="dif-number">04</div>
-        <h3 class="dif-title">Melhores Preços</h3>
-        <p class="dif-text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Competitividade real.</p>
-      </div>
-
+      {{ end }}
     </div>
   </div>
 </section>
@@ -283,13 +144,14 @@
 <!-- ============================================================
      CTA BANNER
      ============================================================ -->
+{{ $cta := $d.cta_banner }}
 <section class="cta-banner">
   <div class="container">
-    <h2>Pronto para otimizar sua operação?</h2>
-    <p>Entre em contato agora e descubra como a Proservicos pode transformar o seu negócio.</p>
+    <h2>{{ $cta.title }}</h2>
+    <p>{{ $cta.text }}</p>
     <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-      <a href="/contato/" class="btn btn-outline-white btn-lg">Solicitar Orçamento</a>
-      <a href="https://wa.me/{{ .Site.Params.whatsapp }}" class="btn btn-lg" style="background:var(--white);color:var(--accent);border:2px solid var(--white);" target="_blank" rel="noopener">Falar no WhatsApp</a>
+      <a href="{{ $cta.button_primary.url }}" class="btn btn-outline-white btn-lg">{{ $cta.button_primary.text }}</a>
+      <a href="https://wa.me/{{ .Site.Params.whatsapp }}" class="btn btn-lg" style="background:var(--white);color:var(--accent);border:2px solid var(--white);" target="_blank" rel="noopener">{{ $cta.button_whatsapp }}</a>
     </div>
   </div>
 </section>

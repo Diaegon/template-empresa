@@ -1,10 +1,11 @@
 {{ define "main" }}
+{{ $d := .Site.Data.contato }}
 
 <!-- Page Hero -->
 <section class="page-hero">
   <div class="container">
-    <h1>Entre em Contato</h1>
-    <p>Estamos prontos para atender você. Envie uma mensagem e retornaremos em breve.</p>
+    <h1>{{ $d.hero.title }}</h1>
+    <p>{{ $d.hero.subtitle }}</p>
     <div class="breadcrumb">
       <a href="/">Home</a>
       <span>›</span>
@@ -19,9 +20,10 @@
     <div class="contact-grid">
 
       <!-- Info card -->
+      {{ $ic := $d.info_card }}
       <div class="contact-info-card">
-        <h3>Informações de Contato</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nossa equipe está pronta para ajudar.</p>
+        <h3>{{ $ic.title }}</h3>
+        <p>{{ $ic.text }}</p>
 
         <div class="contact-item">
           <div class="ci-icon">
@@ -58,21 +60,21 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           </div>
           <div>
-            <div class="ci-label">Horário de Atendimento</div>
-            <div class="ci-value">Seg–Sex: 8h às 18h<br>Sáb: 8h às 12h</div>
+            <div class="ci-label">{{ $ic.hours_label }}</div>
+            <div class="ci-value">{{ $ic.hours | safeHTML }}</div>
           </div>
         </div>
 
         <div style="margin-top:32px;padding-top:28px;border-top:1px solid rgba(255,255,255,.15);">
           <div style="font-size:.8rem;opacity:.6;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px;">Redes Sociais</div>
           <div style="display:flex;gap:10px;">
-            <a href="#" class="footer-social-link" aria-label="Facebook">
+            <a href="{{ .Site.Params.social.facebook }}" class="footer-social-link" aria-label="Facebook">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
             </a>
-            <a href="#" class="footer-social-link" aria-label="Instagram">
+            <a href="{{ .Site.Params.social.instagram }}" class="footer-social-link" aria-label="Instagram">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
             </a>
-            <a href="#" class="footer-social-link" aria-label="LinkedIn">
+            <a href="{{ .Site.Params.social.linkedin }}" class="footer-social-link" aria-label="LinkedIn">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
             </a>
             <a href="https://wa.me/{{ .Site.Params.whatsapp }}" class="footer-social-link" aria-label="WhatsApp" target="_blank" rel="noopener">
@@ -83,9 +85,10 @@
       </div>
 
       <!-- Form card -->
+      {{ $fc := $d.form_card }}
       <div class="contact-form-card">
-        <h3>Envie uma Mensagem</h3>
-        <p>Preencha o formulário abaixo e nossa equipe entrará em contato em até 24 horas úteis.</p>
+        <h3>{{ $fc.title }}</h3>
+        <p>{{ $fc.text }}</p>
 
         <form action="#" method="POST" novalidate>
           <div class="form-row">
@@ -139,16 +142,17 @@
   </div>
 </section>
 
-<!-- Map placeholder -->
+<!-- Map -->
+{{ $m := $d.map }}
 <section style="height:380px;background:var(--gray-200);position:relative;overflow:hidden;">
-  <img src="https://picsum.photos/seed/mapsp/1600/600" alt="Localização Proservicos" style="width:100%;height:100%;object-fit:cover;opacity:.6;">
+  <img src="{{ $m.image }}" alt="{{ $m.image_alt }}" style="width:100%;height:100%;object-fit:cover;opacity:.6;">
   <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
     <div style="background:var(--white);padding:28px 36px;border-radius:14px;box-shadow:var(--shadow-lg);text-align:center;max-width:340px;">
       <div style="font-size:2rem;margin-bottom:8px;">📍</div>
-      <div style="font-weight:700;color:var(--primary);font-size:1rem;margin-bottom:6px;">Proservicos — Sede</div>
+      <div style="font-weight:700;color:var(--primary);font-size:1rem;margin-bottom:6px;">{{ .Site.Title }} — {{ $m.company_label }}</div>
       <div style="font-size:.88rem;color:var(--text-muted);">{{ .Site.Params.address }}</div>
-      <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:16px;font-size:.85rem;padding:10px 20px;">
-        Ver no Google Maps
+      <a href="{{ $m.maps_url }}" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:16px;font-size:.85rem;padding:10px 20px;">
+        {{ $m.maps_button_text }}
       </a>
     </div>
   </div>

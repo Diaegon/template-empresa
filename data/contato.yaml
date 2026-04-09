@@ -1,0 +1,20 @@
+hero:
+  title: "Entre em Contato"
+  subtitle: "Estamos prontos para atender você. Envie uma mensagem e retornaremos em breve."
+
+info_card:
+  title: "Informações de Contato"
+  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nossa equipe está pronta para ajudar."
+  hours_label: "Horário de Atendimento"
+  hours: "Seg–Sex: 8h às 18h<br>Sáb: 8h às 12h"
+
+form_card:
+  title: "Envie uma Mensagem"
+  text: "Preencha o formulário abaixo e nossa equipe entrará em contato em até 24 horas úteis."
+
+map:
+  image: "https://picsum.photos/seed/mapsp/1600/600"
+  image_alt: "Localização"
+  company_label: "Sede"
+  maps_url: "https://maps.google.com"
+  maps_button_text: "Ver no Google Maps"

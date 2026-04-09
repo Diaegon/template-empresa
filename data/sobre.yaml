@@ -1,0 +1,71 @@
+hero:
+  title: "Sobre a Proservicos"
+  subtitle: "Conheça nossa história, missão e os valores que guiam cada decisão que tomamos."
+
+history:
+  label: "Nossa História"
+  title: "Uma empresa construída sobre confiança e resultados"
+  paragraphs:
+    - "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    - "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error."
+    - "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet consectetur."
+  image: "https://picsum.photos/seed/proservabout/800/600"
+  image_alt: "Equipe Proservicos"
+  badge_number: "15+"
+  badge_label: "Anos de<br>Mercado"
+  button_text: "Entre em Contato"
+  button_url: "/contato/"
+
+stats_section:
+  label: "Números que comprovam"
+  title: "Proservicos em números"
+  items:
+    - number: "1.200"
+      suffix: "+"
+      label: "Clientes Ativos"
+    - number: "500"
+      suffix: "+"
+      label: "Produtos Disponíveis"
+    - number: "98"
+      suffix: "%"
+      label: "Satisfação dos Clientes"
+    - number: "15"
+      suffix: "+"
+      label: "Anos de Experiência"
+
+values_section:
+  label: "Cultura Organizacional"
+  title: "Missão, Visão e Valores"
+  subtitle: "Os princípios que orientam cada decisão e cada entrega que fazemos aos nossos clientes."
+  items:
+    - icon: "🎯"
+      title: "Nossa Missão"
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fornecer soluções de qualidade que impulsionem o crescimento e a eficiência dos nossos clientes, com responsabilidade e compromisso."
+    - icon: "🔭"
+      title: "Nossa Visão"
+      text: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ser referência nacional no fornecimento de produtos e serviços industriais até 2030, com presença em todo o território brasileiro."
+    - icon: "💎"
+      title: "Nossos Valores"
+      text: "Ética e transparência em tudo que fazemos. Compromisso com a qualidade, respeito às pessoas, inovação contínua e responsabilidade socioambiental são os pilares da nossa cultura."
+
+team_section:
+  label: "Nosso Time"
+  title: "Conheça nossa equipe"
+  subtitle: "Profissionais experientes e apaixonados pelo que fazem, dedicados a entregar sempre o melhor para você."
+  members:
+    - name: "João Silva"
+      role: "Diretor Comercial"
+      text: "Lorem ipsum dolor sit amet consectetur."
+      image: "https://picsum.photos/seed/team1/400/400"
+    - name: "Maria Oliveira"
+      role: "Gerente de Operações"
+      text: "Sed do eiusmod tempor incididunt ut labore."
+      image: "https://picsum.photos/seed/team2/400/400"
+    - name: "Carlos Santos"
+      role: "Consultor Técnico"
+      text: "Ut enim ad minim veniam quis nostrud."
+      image: "https://picsum.photos/seed/team3/400/400"
+    - name: "Ana Ferreira"
+      role: "Atendimento ao Cliente"
+      text: "Duis aute irure dolor in reprehenderit."
+      image: "https://picsum.photos/seed/team4/400/400"
